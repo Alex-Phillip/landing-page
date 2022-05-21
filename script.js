@@ -1,41 +1,17 @@
-var facilitators;
+let element_list = document.getElementById('list');
+element_list.style.backgroundColor = '#ff6666';
+let new_li = document.createElement('li');
+new_li.innerText = 'Pear';
+new_li.style.color = '#33ff33';
 
-function getNumberOrString(value) {
-  // Convert a string value to a number if possible
-  let number_value = Number(value);
-  if (Number.isNaN(number_value)) {
-    return value
-  } else {
-    return number_value
-  }
-}
+element_list.appendChild(new_li);
+let new_li2 = document.createElement('li');
+new_li2.innerText = 'Kiwi';
+new_li2.style.color = '#993300';
 
-function randomInt(n) {
-  // Return a random number from in [0, n[
-  return Math.floor(Math.random()*n);
-}
+element_list.appendChild(new_li2);
+let new_li3 = document.createElement('li');
+new_li3.innerText = 'Banana';
+new_li3.style.color = '#ffff00';
 
-function randomMember(arr) {
-  // Return a random member of the array
-  return arr[randomInt(arr.length)]
-}
-
-
-facilitators = [];
-
-
-document.getElementById('button').addEventListener('click', (event) => {
-  facilitators.push(getNumberOrString(document.getElementById('text').value));
-  let element_list = document.getElementById('list');
-  let new_li = document.createElement('li');
-  new_li.innerText = getNumberOrString(document.getElementById('text').value);
-
-  element_list.appendChild(new_li);
-
-});
-
-document.getElementById('button2').addEventListener('click', (event) => {
-  let element_random = document.getElementById('random');
-  element_random.innerText = randomMember(facilitators);
-
-});
+element_list.appendChild(new_li3);
